@@ -45,25 +45,25 @@ runs:
       shell: bash
     - id: vpn-wireguard
       if: ${{ inputs.VPN_TYPE == 'wireguard' }}
-      run: script/wireguard.sh
+      run: bash script/wireguard.sh
       shell: bash
     - id: vpn-openvpn
       if: ${{ inputs.VPN_TYPE == 'openvpn' }}
-      run: script/openvpn.sh
+      run: bash script/openvpn.sh
       shell: bash
     - id: vpn-l2tp
       if: ${{ inputs.VPN_TYPE == 'l2tp' }}
-      run: script/l2tp.sh
+      run: bash script/l2tp.sh
       shell: bash
     - id: vpn-pptp
       if: ${{ inputs.VPN_TYPE == 'pptp' }}
-      run: script/pptp.sh
+      run: bash script/pptp.sh
       shell: bash
     - id: vpn-forticlient
       if: ${{ inputs.VPN_TYPE == 'forticlient' }}
-      run: script/pptp.sh
+      run: bash script/pptp.sh
       shell: bash
     - id: vpn-cisco
       if: ${{ inputs.VPN_TYPE == 'cisco' }}
-      run: script/cisco-anyconnect.sh
+      run: bash script/cisco-anyconnect.sh
       shell: bash
