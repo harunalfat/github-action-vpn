@@ -41,21 +41,28 @@ runs:
         echo "${{ inputs.VPN_SERVER }}" >> $VPN_SERVER
         echo "${{ inputs.VPN_PSK }}" >> $VPN_PSK
         echo "${{ inputs.VPN_CONFIG }}" >> $VPN_CONFIG
+      shell: bash
     - id: vpn-wireguard
       if: ${{ inputs.VPN_TYPE == 'wireguard' }}
-      run: bash script/wireguard.sh
+      run: bash ./script/wireguard.sh
+      shell: bash
     - id: vpn-openvpn
       if: ${{ inputs.VPN_TYPE == 'openvpn' }}
-      run: bash script/openvpn.sh
+      run: bash ./script/openvpn.sh
+      shell: bash
     - id: vpn-l2tp
       if: ${{ inputs.VPN_TYPE == 'l2tp' }}
-      run: bash script/l2tp.sh
+      run: bash ./script/l2tp.sh
+      shell: bash
     - id: vpn-pptp
       if: ${{ inputs.VPN_TYPE == 'pptp' }}
-      run: bash script/pptp.sh
+      run: bash ./script/pptp.sh
+      shell: bash
     - id: vpn-forticlient
       if: ${{ inputs.VPN_TYPE == 'forticlient' }}
-      run: bash script/pptp.sh
+      run: bash ./script/pptp.sh
+      shell: bash
     - id: vpn-cisco
       if: ${{ inputs.VPN_TYPE == 'cisco' }}
-      run: bash script/cisco-anyconnect.sh
+      run: bash ./script/cisco-anyconnect.sh
+      shell: bash
