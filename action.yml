@@ -32,17 +32,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Echo VPN Inputs
-      run: |
-        echo "${{ github.action_path }}" >> $GITHUB_ACTION_PATH
-        echo "${{ inputs.VPN_OS }}" >> $VPN_OS
-        echo "${{ inputs.VPN_TYPE }}" >> $VPN_TYPE
-        echo "${{ inputs.VPN_USER }}" >> $VPN_USER
-        echo "${{ inputs.VPN_PASSWORD }}" >> $VPN_PASSWORD
-        echo "${{ inputs.VPN_SERVER }}" >> $VPN_SERVER
-        echo "${{ inputs.VPN_PSK }}" >> $VPN_PSK
-        echo "${{ inputs.VPN_CONFIG }}" >> $VPN_CONFIG
-      shell: bash
     - id: vpn-l2tp
       run: bash ./script/l2tp.sh
       shell: bash
