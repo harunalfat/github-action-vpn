@@ -25,4 +25,4 @@ jobs:
           VPN_PASSWORD: ${{ secrets.L2TP_PASSWORD }}
           VPN_PSK: ${{ secrets.L2TP_PSK }}
       - name: Check if connected
-        run: curl -v ${{ secrets.L2TP_TARGET_URL }}
+        run: curl --connect-timeout 5 -v ${{ secrets.L2TP_TARGET_URL }}

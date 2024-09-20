@@ -44,26 +44,26 @@ runs:
         echo "${{ inputs.VPN_CONFIG }}" >> $VPN_CONFIG
       shell: bash
     - id: vpn-wireguard
-      if: ${{ inputs.VPN_CONFIG == 'wireguard' }}
+      if: ${{ inputs.VPN_TYPE == 'wireguard' }}
       run: script/wireguard.sh
       shell: bash
     - id: vpn-openvpn
-      if: ${{ inputs.VPN_CONFIG == 'openvpn' }}
+      if: ${{ inputs.VPN_TYPE == 'openvpn' }}
       run: script/openvpn.sh
       shell: bash
     - id: vpn-l2tp
-      if: ${{ inputs.VPN_CONFIG == 'l2tp' }}
+      if: ${{ inputs.VPN_TYPE == 'l2tp' }}
       run: script/l2tp.sh
       shell: bash
     - id: vpn-pptp
-      if: ${{ inputs.VPN_CONFIG == 'pptp' }}
+      if: ${{ inputs.VPN_TYPE == 'pptp' }}
       run: script/pptp.sh
       shell: bash
     - id: vpn-forticlient
-      if: ${{ inputs.VPN_CONFIG == 'forticlient' }}
+      if: ${{ inputs.VPN_TYPE == 'forticlient' }}
       run: script/pptp.sh
       shell: bash
     - id: vpn-cisco
-      if: ${{ inputs.VPN_CONFIG == 'cisco' }}
+      if: ${{ inputs.VPN_TYPE == 'cisco' }}
       run: script/cisco-anyconnect.sh
       shell: bash
