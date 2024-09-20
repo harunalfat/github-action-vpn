@@ -30,7 +30,6 @@ inputs:
     description: 'Content of VPN configuration file. Required for OpenVPN and WireGuard.'
     required: false
 runs:
-  using: "composite"
   steps:
     - name: Echo VPN Inputs
       run: |
